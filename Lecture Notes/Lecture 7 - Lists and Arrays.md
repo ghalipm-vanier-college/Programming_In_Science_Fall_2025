@@ -31,7 +31,7 @@ last_element = my_list[-1]  # Accesses the last element, 50
 You can also use **slicing** to access a subset of a list:
 ```python
 sub_list = my_list[1:4]  # Accesses elements from index 1 to 3, i.e., [20, 30, 40]
-sub_list2 = my_list[1:]  # Accesses elements from index 1 to 3, i.e., [20, 30, 40,50]
+sub_list2 = my_list[1:]  # Accesses elements from index 1 to the last element of my_list, i.e., [20, 30, 40,50]
 ```
 
 ### 2. **Don't Repeat Yourself (DRY) Principle**
