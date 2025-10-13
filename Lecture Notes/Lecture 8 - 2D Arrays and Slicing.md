@@ -134,9 +134,11 @@ Example:
 ```python
 rectangular_matrix = [
     [1, 2, 3, 4],
-    [5, 6, 7, 8]
+    [5, 6, 7, 8],
+    [9, 6, 7, 18]
 ]
 
-# Slice first two rows and first three columns
-print([row[:3] for row in rectangular_matrix])  # Output: [[1, 2, 3], [5, 6, 7]]
+# Slice first three columns of each row
+print([row[:3] for row in rectangular_matrix])  # Output: [[1, 2, 3], [5, 6, 7], [9, 6, 7]]
+
 ```
