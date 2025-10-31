@@ -168,3 +168,11 @@ with open('numbers.txt', 'r') as file:
 ```
 
 Test with files containing edge cases, such as empty files or files with inconsistent formatting.
+### Notice: 
+* When working with Colab, to upload a file onto Colab, one can use:
+
+```python
+from google.colab import files 
+uploaded=files.upload()
+```
+* Then , `Files Upload` button appears for uploading a file. 
