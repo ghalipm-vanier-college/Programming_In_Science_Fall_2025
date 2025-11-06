@@ -89,7 +89,18 @@ x=data[:,0]
 y=data[:,1]
 plt.plot(x,y)
 ```
-
+The **pandas**  can be used to load data from a text or csv file as well.
+```python
+from google.colab import files
+uploaded=files.upload()
+import pandas as pd
+import matplotlib.pyplot as plt
+data=pd.read_csv('Book2.csv', header=None) # pd.read_csv("data.txt", sep=' ') # or sep=','
+x=data[0]
+y=data[1]
+plt.plot(x,y)
+plt.show()
+```
 ### 4. **Creating Density Plots**
 
 A **Density Plot** is a smooth representation of the distribution of a dataset. It provides a more continuous representation of the data's distribution compared to histograms. In Matplotlib, you can use **Seaborn**, another library built on top of Matplotlib, to create density plots. Seaborn provides a more convenient interface for complex plotting.
