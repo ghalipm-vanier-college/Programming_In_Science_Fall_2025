@@ -4,10 +4,11 @@
 
 1. [Introduction to Plotting in Python](#introduction-to-plotting-in-python)
 2. [Plotting Simple Graphs Using `plot()` and `show()`](#plotting-simple-graphs-using-plot-and-show)
-3. [Plotting Graphs Using numpy() and plot()](##plotting-graphs-using-numpy-and-plot)
-4. [Creating Density Plots](#creating-density-plots)
-5. [Debugging and Testing Plotting Operations](#debugging-and-testing-plotting-operations)
-
+3. [Plotting Graphs Using numpy and plot()](##plotting-graphs-using-numpy-and-plot)
+4. [Plotting Graphs Using pandas and plot()](##plotting-graphs-using-numpy-and-plot)
+5. [Creating Density Plots](#creating-density-plots)
+6. [Debugging and Testing Plotting Operations](#debugging-and-testing-plotting-operations)
+**Plotting Graphs Using `pandas` and `plot()`**
 ### 1. **Introduction to Plotting in Python**
 
 Plotting data is a critical aspect of data analysis and visualization. Python provides several libraries for plotting graphs, and the most popular one is **Matplotlib**. The **matplotlib.pyplot** module provides a set of functions for creating various types of graphs, such as line plots, scatter plots, bar charts, and more.
@@ -89,19 +90,55 @@ x=data[:,0]
 y=data[:,1]
 plt.plot(x,y)
 ```
+### 4. **Plotting Graphs Using `pandas` and `plot()`**
 The **pandas**  can be used to load data from a text or csv file as well.
+#### 1. **data in dictionary format:**
 ```python
-from google.colab import files
-uploaded=files.upload()
 import pandas as pd
-import matplotlib.pyplot as plt
-data=pd.read_csv('Book2.csv', header=None) # pd.read_csv("data.txt", sep=' ') # or sep=','
-x=data[0]
-y=data[1]
-plt.plot(x,y)
-plt.show()
+data={'x':['A', 'B','C','D', 'E'], 'y':[15,20,19,23,25]}
+df=pd.DataFrame(data)
+df.plot(x='x',y='y', kind='bar')
 ```
-### 4. **Creating Density Plots**
+#### 2. **data in csv format:**
+```python
+import pandas as pd
+df=pd.read_csv('Book2.csv')
+df.plot(x='x',y='y', kind='bar') # kind='scatter', 'line', 'bar'
+```
+
+`Book2.csv` file:
+`
+
+x,y
+
+1,2
+
+2,4
+
+3,6
+
+4,8
+
+`
+#### 3. **data in .txt format:**
+```python
+import pandas as pd
+pd.read_csv('data2.txt')
+df.plot(x='x', y='y', kind='scatter', marker='o', title='working with .txt format file')
+```
+`data2.txt` file: 
+
+0 0
+
+1 1
+
+2 4
+
+3 9
+
+4 16
+
+### 5. **Creating Density Plots**
 
 A **Density Plot** is a smooth representation of the distribution of a dataset. It provides a more continuous representation of the data's distribution compared to histograms. In Matplotlib, you can use **Seaborn**, another library built on top of Matplotlib, to create density plots. Seaborn provides a more convenient interface for complex plotting.
 
@@ -149,7 +186,7 @@ plt.show()
 - **`shade`**: Fills the area under the curve with color.
 - **`bw_adjust`**: Adjusts the bandwidth, which controls the smoothness of the density plot.
 
-### 5. **Debugging and Testing Plotting Operations**
+### 6. **Debugging and Testing Plotting Operations**
 
 When working with plots, it's essential to ensure that your data is correctly formatted and that your plotting functions are used properly. Here are some debugging tips:
 
