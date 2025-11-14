@@ -129,7 +129,7 @@ from google.colab import files
 uploaded=files.upload()
 import pandas as pd
 # working with pandas txt format files
-df=pd.read_csv('data.txt', sep=' ', header=None, names=['x','y'])
+df=pd.read_csv('data.txt', sep=' ', header=None, names=['x','y']) # pd.read_csv() turns into dataframe. 
 df.plot(x='x', y='y', kind='scatter', marker='o', title='working with .txt format file')
 ```
 `data2.txt` file: 
