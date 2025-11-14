@@ -97,13 +97,16 @@ The **pandas**  can be used to load data from a text or csv file as well.
 import pandas as pd
 data={'x':['A', 'B','C','D', 'E'], 'y':[15,20,19,23,25]}
 df=pd.DataFrame(data)
-df.plot(x='x',y='y', kind='bar')
+df.plot(x='x', y='y', kind='scatter', marker='o')
 ```
 #### 2. **data in csv format:**
 ```python
+from google.colab import files
+uploaded=files.upload()
+# working with pandas - csv format files
 import pandas as pd
-df=pd.read_csv('Book2.csv')
-df.plot(x='x',y='y', kind='bar') # kind='scatter', 'line', 'bar'
+df=pd.read_csv('Book1.csv', names=['x','y'])
+df.plot(x='x', y='y', kind='scatter', marker='o')
 ```
 
 `Book2.csv` file:
@@ -122,8 +125,11 @@ x,y
 `
 #### 3. **data in .txt format:**
 ```python
+from google.colab import files
+uploaded=files.upload()
 import pandas as pd
-pd.read_csv('data2.txt')
+# working with pandas txt format files
+df=pd.read_csv('data.txt', sep=' ', header=None, names=['x','y'])
 df.plot(x='x', y='y', kind='scatter', marker='o', title='working with .txt format file')
 ```
 `data2.txt` file: 
