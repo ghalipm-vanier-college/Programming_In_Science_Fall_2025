@@ -8,7 +8,7 @@
 4. [Plotting Graphs Using pandas and plot()](##plotting-graphs-using-numpy-and-plot)
 5. [Creating Density Plots](#creating-density-plots)
 6. [Debugging and Testing Plotting Operations](#debugging-and-testing-plotting-operations)
-**Plotting Graphs Using `pandas` and `plot()`**
+
 ### 1. **Introduction to Plotting in Python**
 
 Plotting data is a critical aspect of data analysis and visualization. Python provides several libraries for plotting graphs, and the most popular one is **Matplotlib**. The **matplotlib.pyplot** module provides a set of functions for creating various types of graphs, such as line plots, scatter plots, bar charts, and more.
